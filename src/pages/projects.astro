@@ -1,0 +1,120 @@
+---
+import { Image } from "astro:assets";
+import Nav from "@/components/nav.astro";
+import Layout from "@/layouts/Layout.astro";
+
+import hand from "../../public/projects/hand.png";
+import lo62 from "../../public/projects/projectlo62.png";
+import drishti from "../../public/projects/drishti.png";
+
+interface Project {
+    title: string;
+    image: ImageMetadata;
+    link: string;
+    preview: string;
+    status: string;
+    category: string[];
+}
+
+const projects: Project[] = [
+    {
+        title: "Drishti",
+        image: drishti as ImageMetadata,
+        link: "https://github.com/epicshi",
+        preview: "https://drishti-web-app.vercel.app/",
+        status: "In Development",
+        category: ["Web Development", "Mobile Development", "Hardware & IoT"],
+    },
+    {
+        title: "Project LO62",
+        image: lo62 as ImageMetadata,
+        link: "https://github.com/arpy8/project-lo62",
+        preview: "https://arpy8.github.io/project-LO62",
+        status: "In Development",
+        category: ["Hardware & IoT"],
+    },
+    {
+        title: "A fucking Prosthetic Hand",
+        image: hand as ImageMetadata,
+        link: "https://github.com/arpy8/Team-Hastakriti",
+        preview: "https://www.cloakycodes.me/",
+        status: "Our solution for SIH 2024",
+        category: ["Hardware & IoT"],
+    },
+];
+---
+
+<Nav />
+<Layout title="Arpit Sengar | Experience" favicon={"../../public/favicon.png"}>
+    <section class="text-[var(--white)] mt-12 md:mt-0" id="home">
+        <div class="max-w-5xl mx-auto space-y-8 md:py-36 pb-14">
+            <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">My work</h2>
+            <h3 class="text-4xl md:text-5xl font-medium mb-8">Projects</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {
+                    projects.map((project) => (
+                        <div class="group">
+                            <a
+                                href={project.preview}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="block"
+                            >
+                                <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
+                                    <Image
+                                        src={project.image}
+                                        alt={project.title}
+                                        class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
+                                    />
+                                </div>
+                                <div class="flex items-center px-3">
+                                    <div class="flex-grow">
+                                        <h4 class="text-2xl font-semibold">
+                                            {project.title}
+                                        </h4>
+                                        <span class="py-1 text-sm text-[var(--white-icon)]">
+                                            {project.status}
+                                        </span>
+                                    </div>
+                                    <div class="flex gap-2 ml-auto">
+                                        <a
+                                            target="_blank"
+                                            href={project.link}
+                                            aria-label="GitHub"
+                                            class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                fill="currentColor"
+                                                class="size-7"
+                                            >
+                                                <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z" />
+                                            </svg>
+                                        </a>
+                                        <a
+                                            target="_blank"
+                                            href={project.preview}
+                                            aria-label="Preview"
+                                            class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                fill="currentColor"
+                                                class="size-7"
+                                            >
+                                                <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+</Layout>
