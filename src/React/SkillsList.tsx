@@ -38,21 +38,18 @@ const SkillsList = () => {
 
   const skills = {
     "Web & Mobile Development": [
-      "Single Page Applications (SPAs)",
-      "Landing pages and business websites",
-      "Portfolio websites",
+      "Developed websites and web apps", 
       "Mobile-friendly web apps",
       "React Native mobile apps",
     ],
     "Hardware & IoT": [
-      "UI design with Figma & Canva",
-      "UX research & improvements",
-      "Prototyping for websites & mobile apps",
+      "Microcontroller programming",
+      "Sensor integration",
+      "IoT device prototyping",
     ],
     "3D Modelling": [
-      "UI design with Figma & Canva",
-      "UX research & improvements",
-      "Prototyping for websites & mobile apps",
+      "3D model creation",
+      "3D printing preparation",
     ],
   };
 

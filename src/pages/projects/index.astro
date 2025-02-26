@@ -3,9 +3,10 @@ import { Image } from "astro:assets";
 import Nav from "@/components/nav.astro";
 import Layout from "@/layouts/Layout.astro";
 
-import hand from "../../public/projects/hand.png";
-import lo62 from "../../public/projects/projectlo62.png";
-import drishti from "../../public/projects/drishti.png";
+import favicon from "../../../public/favicon.ico";
+import hand from "../../../public/projects/hand.png";
+import lo62 from "../../../public/projects/projectlo62.png";
+import drishti from "../../../public/projects/drishti.png";
 
 interface Project {
     title: string;
@@ -45,7 +46,7 @@ const projects: Project[] = [
 ---
 
 <Nav />
-<Layout title="Arpit Sengar | Experience" favicon={"../../public/favicon.png"}>
+<Layout title="Arpit Sengar | Projects" favicon={favicon}>
     <section class="text-[var(--white)] mt-12 md:mt-0" id="home">
         <div class="max-w-5xl mx-auto space-y-8 md:py-36 pb-14">
             <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">My work</h2>

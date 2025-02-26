@@ -5,9 +5,11 @@ import Home from "@/components/home.astro";
 import Projects from "@/components/projects.astro";
 import Contact from "@/components/contact.astro";
 import Footer from "@/components/footer.astro";
+
+import favicon from "../../public/favicon.ico";
 ---
 
-<Layout title="Arpit Sengar" favicon={"../../public/favicon.png"}>
+<Layout title="Arpit Sengar" favicon={favicon}>
   <Nav />
   <Home />
   <Projects />
