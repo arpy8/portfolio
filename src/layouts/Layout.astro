@@ -1,10 +1,11 @@
 ---
-import Analytics from '@vercel/analytics/astro'
+import { inject } from '@vercel/analytics';
+inject();
 
-import DisableDevtool from 'disable-devtool';
-if (!import.meta.env.SSR) {
-  DisableDevtool();
-}
+// import DisableDevtool from 'disable-devtool';
+// if (!import.meta.env.SSR) {
+//   DisableDevtool();
+// }
 
 interface Props {
   title: string;
@@ -46,7 +47,7 @@ const { title, favicon } = Astro.props;
   </head>
   <body class="bg-[--background] md:px-48 lg:px-20 px-9">
     <slot />
-    <Analytics />
+    <!-- <Analytics /> -->
   </body>
 </html>
 
