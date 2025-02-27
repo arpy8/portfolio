@@ -1,5 +1,6 @@
 ---
-import { ImageFunction } from 'astro:content';
+import Analytics from '@vercel/analytics/astro'
+
 import DisableDevtool from 'disable-devtool';
 if (!import.meta.env.SSR) {
   DisableDevtool();
@@ -11,7 +12,6 @@ interface Props {
 }
 
 const { title, favicon } = Astro.props;
-
 ---
 
 <!doctype html>
