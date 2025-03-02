@@ -1352,6 +1352,10 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
           translate-x-[20%]
           -translate-y-1/2
           transition-all
+          lg:absolute
+          lg:top-[22rem]
+          md:bottom-[1.5em]
+          md:absolute
           ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
           ${isMoving
                                 ? "opacity-0 pointer-events-none duration-[100ms]"
@@ -1367,10 +1371,12 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
                         className={`
                             select-none
                             absolute
-                            max-w-[10ch]
+                            max-w-[12ch]
                             text-[1.5rem]
-                            top-1/2
                             right-[1%]
+                            lg:bottom-[10rem]
+                            md:bottom-[35rem]
+                            md:absolut4
                             transition-all
                             ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
                             ${isMoving
@@ -1386,27 +1392,31 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
                     <div
                         onClick={handleButtonClick}
                         className={`
-          absolute
-          left-1/2
-          z-10
-          w-[60px]
-          h-[60px]
-          grid
-          place-items-center
-          bg-[#00ffff]
-          border-[5px]
-          border-black
-          rounded-full
-          cursor-pointer
-          transition-all
-          ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
-          ${isMoving
+                                absolute
+                                left-1/2
+                                z-10
+                                lg:w-[60px]
+                                lg:h-[60px]
+                                md:w-[160px]
+                                md:h-[160px]
+                                md:absolute
+                                md:bottom-[5%]
+                                text-center
+                                grid
+                                place-items-center
+                                bg-[#00ffff]
+                                border-[5px]
+                                border-black
+                                rounded-full
+                                cursor-pointer
+                                transition-all
+                                ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
+                                ${isMoving
                                 ? "bottom-[-80px] opacity-0 pointer-events-none duration-[100ms] scale-0 -translate-x-1/2"
-                                : "bottom-[3.8em] opacity-100 pointer-events-auto duration-[500ms] scale-100 -translate-x-1/2"
+                                : "bottom-[3.8em] opacity-100 pointer-events-auto duration-[500ms] scale-100 -translate-x-1/2 hover:bg-[#00cccc] hover:scale-110"
                             }
-        `}
-                    >
-                        <p className="select-none relative text-[#060606] top-[2px] text-[26px]">
+                    `}>
+                        <p className="select-none relative text-[#060606] lg:top-[2px] md:bottom-[5px] lg:text-[26px] md:text-[52px]">
                             &#x2197;
                         </p>
                     </div>
