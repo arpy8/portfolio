@@ -1363,7 +1363,12 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
                             }
         `}
                     >
-                        {activeItem.title}
+                        <a
+                            href={activeItem.link}
+                            target="_blank"
+                        >
+                            {activeItem.title}
+                        </a>
                     </h2>
 
                     {/* Description */}
