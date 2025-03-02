@@ -1,0 +1,82 @@
+---
+import InfiniteMenu from "../React/InfiniteMenu";
+
+const items = [
+  {
+    link: "https://www.reddit.com/user/Physical-Pudding-833/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button",
+    title: "Reddit",
+    description: "I shitpost here sometimes.",
+    image: "/socials/reddit.png",
+  },
+  {
+    title: "Linkedin",
+    description: "Need job.",
+    link: "https://www.linkedin.com/in/arpitsengar/",
+    image: "/socials/linkedin.png",
+  },
+  {
+    title: "Github",
+    description: "This is where my code lives.",
+    link: "https://github.com/arpy8",
+    image: "/socials/github.png",
+  },
+  {
+    title: "Gmail",
+    description: "Consider sending me an email.",
+    link: "mailto:arpitsengar99@gmail.com",
+    image: "/socials/mail.png",
+  },
+  {
+    title: "Insta",
+    description: "Might post some cool stuff here.",
+    link: "https://www.instagram.com/arpy8_/",
+    image: "/socials/instagram.png",
+  },
+  {
+    title: "Youtube",
+    description: "Yup I have a channel.",
+    link: "https://www.youtube.com/@arpy8",
+    image: "/socials/youtube.png",
+  },
+
+  {
+    title: "Website",
+    description: "Wow I have a website.",
+    link: "/",
+    image: "/socials/globe.png",
+  },
+  {
+    title: "Creativity Dump",
+    description: "test",
+    link: "https://www.instagram.com/eclectictrashh",
+    image: "/socials/instagram.png",
+  },
+  {
+    title: "HuggingFace",
+    description: "I mostly use it for API deployment.",
+    link: "https://hf.co/arpy8",
+    image: "/socials/huggingface.png",
+  },
+  {
+    title: "Last.fm",
+    description: "Get to know my music taste.",
+    link: "https://www.last.fm/user/arpy8",
+    image: "/socials/lastfm.png",
+  },
+  {
+    title: "HackerRank",
+    description: "Did some competitive programming earlier.",
+    link: "https://www.hackerrank.com/profile/arpy8",
+    image: "/socials/hackerrank.png",
+  },
+];
+---
+
+<section
+  id="gallery"
+  class="border-[#ffffff10] text-white bg-black w-full h-screen"
+>
+  <div class="w-full h-full">
+    <InfiniteMenu client:load items={items} />
+  </div>
+</section>
