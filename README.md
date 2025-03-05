@@ -6,7 +6,7 @@
 
 ---
 
-The component `<LetterGlitch \>` and `<InfiniteMenu \>` was taken from [ReactBits.dev](https://www.reactbits.dev/)
+The component `<LetterGlitch \>` and `<InfiniteMenu \>` were taken from [ReactBits.dev](https://www.reactbits.dev/)
 
 ## **Stack** 
 ### **Frontend**  
