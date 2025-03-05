@@ -1,19 +1,14 @@
 # Portfolio Website
-> Developed with passion while listening to _Hurry Up Tomorrow by The Weeknd_. Completed in just 3 days.
-![OscarHernandez-portfolio](https://github.com/user-attachments/assets/e284a42b-15c5-495c-99c7-ad5c1eb3bbe7)
-[![Deploy Status](https://img.shields.io/badge/Deploy-Vercel-black?style=flat&logo=vercel)](tu-url-deploy)
+
+![image](https://github.com/user-attachments/assets/2d647a83-f1e8-4c1c-8780-712fb76df423)
+
+[![Deploy Status](https://img.shields.io/badge/Visit-Site-black?style=flat&logo=vercel)](https://www.arpy8.com/)
 
 ---
 
-[Demo](https://oscarhernandez.vercel.app/)
+The component `<LetterGlitch \>` and `<InfiniteMenu \>` was taken from [ReactBits.dev](https://www.reactbits.dev/)
 
-[Astro Themes](https://astro.build/themes/details/dark-minimal/)
-
-[ReactBits Showcase](https://www.reactbits.dev/showcase) 
-
-The component `<LetterGlitch \>` was taken from [ReactBits.dev](https://www.reactbits.dev/)
-
-## **Stack**  
+## **Stack** 
 ### **Frontend**  
 ![Astro](https://img.shields.io/badge/Astro-FF5D01?logo=astro&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)
@@ -24,23 +19,17 @@ The component `<LetterGlitch \>` was taken from [ReactBits.dev](https://www.reac
 ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=black)
 ![Canva](https://img.shields.io/badge/Canva-c900c3?logo=canva&logoColor=white)
 
-### **Show your favorite Spotify album (or your own)** ![Spotify](https://img.shields.io/badge/Spotify-06cc1a?logo=spotify&logoColor=white)
-1. Choose your Spotify album
-2. Access the share options
-3. Select 'copy embed code'
-```
-<iframe src="https://open.spotify.com/embed/album/ALBUM_ID" style="border-radius:12px border:0;" class="w-full h-40" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-```
-4. Insert the embed code on footer.astro
-
-That's it!
-
 ## **Project structure**
 ```
 public/
-└── svg/
+├── favicons/
+├── links/
+├── misc/
+├── socials/
+├── svg/
+└── projects/
 src/
-├── Components/
+├── components/
 ├── layouts/
 ├── React/
 └── pages/
