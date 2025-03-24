@@ -3,6 +3,8 @@
     "module": "es2020",
     "allowImportingTsExtensions": true,
     "noEmit": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
     "types": [
       "astro/client"
     ],
