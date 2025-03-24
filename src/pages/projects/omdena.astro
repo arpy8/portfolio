@@ -3,6 +3,96 @@ import Nav from "@/components/nav.astro";
 import Layout from "@/layouts/Layout.astro";
 import favicon from "/favicons/main.ico";
 import SplashCursor from "../../React/SplashCursor";
+import ShinyText from "@/React/ShinyText";
+
+import { Image } from "astro:assets";
+
+import mexico from "../../../public/projects/omdena/mexico-chapter.png";
+import giza from "../../../public/projects/omdena/giza-chapter.png";
+import rwanda from "../../../public/projects/omdena/rwanda-chapter.png";
+import myanmar from "../../../public/projects/omdena/myanmar-chapter.png";
+import nigeria from "../../../public/projects/omdena/nigeria-chapter.png";
+import algeria from "../../../public/projects/omdena/algeria-chapter.png";
+import toronto from "../../../public/projects/omdena/toronto-chapter.png";
+import el_salvador from "../../../public/projects/omdena/el-salvador-chapter.png";
+import vitb_chapter from "../../../public/projects/omdena/vitb-chapter.png";
+
+interface Project {
+    title: string;
+    image: ImageMetadata;
+    link: string;
+    preview: string;
+    status: string;
+}
+
+const projects: Project[] = [
+    {
+        title: "Al Based Road Inspection System for Mexico",
+        image: mexico as ImageMetadata,
+        link: "https://github.com/OmdenaAI/bhopal-mexico-ai-road-inspection",
+        preview:
+            "https://restlesshornet-omdenawebapp-app-1qfufd.streamlit.app/",
+        status: "Bhopal and Mexico Chapter",
+    },
+    {
+        title: "Natural Language Processing with Disaster Tweets",
+        image: giza as ImageMetadata,
+        link: "https://www.omdena.com/chapter-challenges/natural-language-processing-with-disaster-tweets",
+        preview:
+            "https://app-2-tweets-classification.streamlit.app/Tweet_Classification",
+        status: "Giza, Egypt Chapter",
+    },
+    {
+        title: "Developing an Automated Water Quality Prediction System using ML",
+        image: rwanda as ImageMetadata,
+        link: "https://github.com/arpy8/Omdena_Rwanda_Streamlit_App",
+        preview: "https://water-quality-prediction-system.streamlit.app/",
+        status: "Kigali, Rwanda Chapter",
+    },
+    {
+        title: "Covid-19 Detection from Chest X-ray Images using DL",
+        image: myanmar as ImageMetadata,
+        link: "https://github.com/arpy8/Omdena_Myanmar_Streamlit_App",
+        preview: "https://chest-xrays-detection-system.streamlit.app/",
+        status: "Myanmar Chapter",
+    },
+    {
+        title: "Developing an Interative Chatbot for the Omdena Website",
+        image: nigeria as ImageMetadata,
+        link: "https://github.com/OmdenaAI/nigeria-chapter-interactive-chatbot",
+        preview: "https://youtu.be/870M1AAMsPI?si=CjZBFyY122qXlqCp",
+        status: "Lagos, Nigeria Chapter",
+    },
+    {
+        title: "Water Management and Forecasting Project in Algeria and Bhopal",
+        image: algeria as ImageMetadata,
+        link: "https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting",
+        preview:
+            "https://omdenaalgeriabhopalappapp-lddmecdsjr2qlpnuocdc6b.streamlit.app/",
+        status: "Bhopal and Algeria Chapter",
+    },
+    {
+        title: "Early Detection and Diagnosis of Alzheimer's Disease",
+        image: toronto as ImageMetadata,
+        link: "https://dagshub.com/Omdena/TorontoCanadaChapter_BrainScanImages",
+        preview: "https://arpy8-omdena-toronto-streamlit-app.hf.space/",
+        status: "Toronto, Canada Chapter",
+    },
+    {
+        title: "IREX-El-Salvador: AI-Powered Mis/Disinformation Detection for El Salvador",
+        image: el_salvador as ImageMetadata,
+        link: "https://github.com/arpy8/Omdena_IREX-El-Salvador-Sentiment-Analysis-App",
+        preview: "https://arpy8-omdena-irex-sentiment-analysis.hf.space/",
+        status: "AI Innovation Project, EL Salvador Chapter",
+    },
+    {
+        title: "Developing an AI Chatbot for Bhopal's Bus Rapid Transit System (BRTS) Navigation",
+        image: vitb_chapter as ImageMetadata,
+        link: "https://dagshub.com/Omdena/VITBhopalUniversity_ChatbotforBRTSNavigation",
+        preview: "https://bhopal-brts-chatbot.streamlit.app/",
+        status: "VIT Bhopal Chapter",
+    },
+];
 ---
 
 <Nav />
@@ -15,8 +105,86 @@ import SplashCursor from "../../React/SplashCursor";
             class="relative z-20 w-full min-h-screen flex items-center justify-center text-[var(--white)] my-12 md:mt-0"
             id="home"
         >
-            <!-- Your content here -->
-            <h1 class="text-center">content for this section is yet to be added.</h1>
+            <div class="max-w-5xl mx-auto my-36">
+                <a href="/projects">
+                    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">
+                        Projects
+                    </h2>
+                </a>
+                <h3 class="text-4xl md:text-5xl font-medium mb-8">
+                    <a
+                        href="https://collaborator.omdena.com/collaborator-profile/59416/"
+                        target="_blank"
+                    >
+                        <ShinyText text="Omdena" />
+                    </a>
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {
+                        projects.map((project) => (
+                            <div class="group">
+                                <a
+                                    href={project.preview}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="block"
+                                >
+                                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
+                                        <Image
+                                            src={project.image}
+                                            alt={project.title}
+                                            class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
+                                        />
+                                    </div>
+                                    <div class="flex items-center px-3">
+                                        <div class="flex-grow">
+                                            <h4 class="text-2xl font-semibold">
+                                                {project.title}
+                                            </h4>
+                                            <span class="py-1 text-sm text-[var(--white-icon)]">
+                                                {project.status}
+                                            </span>
+                                        </div>
+                                        <div class="flex gap-2 ml-auto">
+                                            <a
+                                                target="_blank"
+                                                href={project.link}
+                                                aria-label="GitHub"
+                                                class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                                            >
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24"
+                                                    fill="currentColor"
+                                                    class="size-7"
+                                                >
+                                                    <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z" />
+                                                </svg>
+                                            </a>
+                                            <a
+                                                target="_blank"
+                                                href={project.preview}
+                                                aria-label="Preview"
+                                                class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                                            >
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24"
+                                                    fill="currentColor"
+                                                    class="size-7"
+                                                >
+                                                    <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
         </section>
     </div>
 </Layout>

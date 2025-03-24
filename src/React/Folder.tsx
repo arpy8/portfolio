@@ -126,9 +126,9 @@ const Folder: React.FC<FolderProps> = ({
             ></span>
             {imageItems.map((img, i) => {
               let sizeClasses = "";
-              if (i === 0) sizeClasses = open ? "w-[70%] h-[80%]" : "w-[70%] h-[80%]";
-              if (i === 1) sizeClasses = open ? "w-[80%] h-[80%]" : "w-[80%] h-[70%]";
-              if (i === 2) sizeClasses = open ? "w-[90%] h-[80%]" : "w-[90%] h-[60%]";
+              if (i === 0) sizeClasses = open ? "w-[90%] h-[80%]" : "w-[90%] h-[80%]";
+              if (i === 1) sizeClasses = open ? "w-[90%] h-[80%]" : "w-[90%] h-[80%]";
+              if (i === 2) sizeClasses = open ? "w-[90%] h-[80%]" : "w-[90%] h-[80%]";
 
               const transformStyle = open
                 ? `${getOpenTransform(i)} translate(${paperOffsets[i].x}px, ${paperOffsets[i].y}px)`
@@ -183,8 +183,6 @@ const Folder: React.FC<FolderProps> = ({
           <ShinyText
             text={label}
             disabled={false}
-            speed={3}
-            className="custom-class"
           />
         </span>
       )}

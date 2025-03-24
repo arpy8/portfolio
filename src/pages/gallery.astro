@@ -1,0 +1,109 @@
+---
+import InfiniteMenu from "../React/InfiniteMenu";
+
+const items = [
+  {
+    title: "Website",
+    description: "Wow I have a website.",
+    link: "http://arpy8.com/",
+    image: "/icons/globe.png",
+  },
+  {
+    title: "Linkedin",
+    description: "Need job.",
+    link: "https://www.linkedin.com/in/arpitsengar/",
+    image: "/icons/linkedin.png",
+  },
+  {
+    title: "Github",
+    description: "This is where my code lives.",
+    link: "https://github.com/arpy8",
+    image: "/icons/github.png",
+  },
+  {
+    title: "Gmail",
+    description: "Consider sending a mail.",
+    link: "mailto:arpitsengar99@gmail.com",
+    image: "/icons/mail.png",
+  },
+  {
+    title: "Insta",
+    description: "Might post some cool stuff here.",
+    link: "https://www.instagram.com/arpy8_/",
+    image: "/icons/instagram.png",
+  },
+  {
+    title: "Youtube",
+    description: "Yup I have a channel.",
+    link: "https://www.youtube.com/@arpy8",
+    image: "/icons/youtube.png",
+  },
+  {
+    title: "Omdena",
+    description: "I am a Chapter Lead as well!",
+    link: "https://collaborator.omdena.com/collaborator-profile/59416/",
+    image: "/icons/omdena.jpg",
+  },
+  {
+    title: "Leetcode",
+    description: "Did some competitive programming earlier.",
+    link: "https://leetcode.com/u/arpy8/",
+    image: "/icons/leetcode.webp",
+  },
+  {
+    title: "HackerRank",
+    description: "Did some competitive programming earlier.",
+    link: "https://www.hackerrank.com/profile/arpy8",
+    image: "/icons/hackerrank.png",
+  },
+  {
+    title: "HuggingFace",
+    description: "I mostly use this for API deployment.",
+    link: "https://hf.co/arpy8",
+    image: "/icons/huggingface.svg",
+  },
+  {
+    title: "Last.fm",
+    description: "Get to know my music taste.",
+    link: "https://www.last.fm/user/arpy8",
+    image: "/icons/lastfm.png",
+  },
+  {
+    link: "https://www.reddit.com/user/Physical-Pudding-833/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button",
+    title: "Reddit",
+    description: "I shitpost here sometimes.",
+    image: "/icons/reddit.png",
+  },
+  {
+    title: "Spotify",
+    description: "Get to know my music taste.",
+    link: "https://open.spotify.com/user/314en4ia7eeyco74hvxp6254hmam",
+    image: "/icons/spotify.webp",
+  },
+  {
+    title: "Letterboxd",
+    description: "I rate movies here (sometimes).",
+    link: "https://letterboxd.com/arpy8/",
+    image: "/icons/letterboxd.svg",
+  },
+  // {
+  //   title: "Snapchat",
+  //   description: "Get to know my music taste.",
+  //   link: "https://open.spotify.com/user/314en4ia7eeyco74hvxp6254hmam",
+  //   image: "/icons/snapchat.webp",
+  // },
+];
+---
+
+<head>
+  <title>Arpit Sengar | Gallery</title>
+  <link rel="icon" href="/favicons/main.ico" />
+</head>
+<section
+  id="gallery"
+  class="border-[#ffffff10] text-white bg-[#101010] w-full h-screen"
+>
+  <div class="w-full h-full bg-[#101010]">
+    <InfiniteMenu client:load items={items} />
+  </div>
+</section>
