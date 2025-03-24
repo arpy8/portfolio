@@ -1,18 +1,46 @@
 ---
-"use client";
+import ShinyText from "../React/ShinyText";
+import { Image } from "astro:assets";
+import baatcheet from "../../public/projects/baatcheet.png";
+import drishti from "../../public/projects/drishti.png";
 
-import Aurora from "../React/Aurora";
+interface Project {
+  title: string;
+  image: ImageMetadata;
+  link: string;
+  preview: string;
+  status: string;
+}
+
+const projects: Project[] = [
+  {
+    title: "Drishti",
+    image: drishti as ImageMetadata,
+    link: "https://github.com/epicshi",
+    preview: "https://drishti-web-app.vercel.app/",
+    status: "In Development",
+  },
+  {
+    title: "BaatCheet",
+    image: baatcheet as ImageMetadata,
+    link: "https://github.com/arpy8/BaatCheet",
+    preview: "https://arpy8-baatcheet.hf.space",
+    status: "Secure peer-to-peer video communication",
+  },
+];
 ---
 
-<section class="w-screen h-screen bg-black fixed inset-0" id="home">
-  <div class="absolute inset-0 w-screen h-screen">
-    <Aurora
-      client:only="react"
-      colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
-      blend={0.8}
-      amplitude={1.5}
-      speed={0.3}
+<section
+  id="projects"
+  class="py-12 border-t border-[#ffffff10] text-[var(--white)] bg-black"
+>
+  <div class="max-w-5xl mx-auto">
+    <ShinyText
+      text="Just some shiny text!"
+      disabled={false}
+      speed={3}
+      className="custom-class"
+      client:load
     />
   </div>
-  <!-- Your other content can go here with higher z-index -->
 </section>

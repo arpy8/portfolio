@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import ShinyText from "./ShinyText";
 
 interface FolderProps {
   color?: string;
@@ -105,9 +106,8 @@ const Folder: React.FC<FolderProps> = ({
           </div>
         )}
         <div
-          className={`group relative transition-all duration-200 ease-in cursor-pointer ${
-            !open ? "hover:-translate-y-2" : ""
-          }`}
+          className={`group relative transition-all duration-200 ease-in cursor-pointer ${!open ? "hover:-translate-y-2" : ""
+            }`}
           style={{
             ...folderStyle,
             transform: open ? "translateY(-8px)" : undefined,
@@ -140,10 +140,9 @@ const Folder: React.FC<FolderProps> = ({
                   onMouseMove={(e) => handlePaperMouseMove(e, i)}
                   onMouseLeave={(e) => handlePaperMouseLeave(e, i)}
                   className={`absolute z-20 bottom-[10%] left-1/2 transition-all duration-300 ease-in-out shadow-sm border border-zinc-400 rounded-md ring-1 ring-zinc-200/20 overflow-hidden
-                    ${
-                      !open
-                        ? "transform -translate-x-1/2 translate-y-[10%] group-hover:translate-y-0"
-                        : "hover:scale-110"
+                    ${!open
+                      ? "transform -translate-x-1/2 translate-y-[10%] group-hover:translate-y-0"
+                      : "hover:scale-110"
                     } ${sizeClasses}`}
                   style={{
                     ...(!open ? {} : { transform: transformStyle }),
@@ -151,9 +150,9 @@ const Folder: React.FC<FolderProps> = ({
                   }}
                 >
                   {img && (
-                    <img 
-                      src={img} 
-                      alt="" 
+                    <img
+                      src={img}
+                      alt=""
                       className="w-full h-full object-cover"
                     />
                   )}
@@ -161,18 +160,16 @@ const Folder: React.FC<FolderProps> = ({
               );
             })}
             <div
-              className={`absolute z-30 w-full h-full origin-bottom transition-all duration-300 ease-in-out rounded-md border border-zinc-400 ring-1 ring-zinc-200/20 ${
-                !open ? "group-hover:[transform:skew(15deg)_scaleY(0.6)]" : ""
-              }`}
+              className={`absolute z-30 w-full h-full origin-bottom transition-all duration-300 ease-in-out rounded-md border border-zinc-400 ring-1 ring-zinc-200/20 ${!open ? "group-hover:[transform:skew(15deg)_scaleY(0.6)]" : ""
+                }`}
               style={{
                 backgroundColor: color,
                 ...(open && { transform: "skew(15deg) scaleY(0.6)" }),
               }}
             ></div>
             <div
-              className={`absolute z-30 w-full h-full origin-bottom transition-all duration-300 ease-in-out rounded-md border border-zinc-400 ring-1 ring-zinc-200/20 ${
-                !open ? "group-hover:[transform:skew(-15deg)_scaleY(0.6)]" : ""
-              }`}
+              className={`absolute z-30 w-full h-full origin-bottom transition-all duration-300 ease-in-out rounded-md border border-zinc-400 ring-1 ring-zinc-200/20 ${!open ? "group-hover:[transform:skew(-15deg)_scaleY(0.6)]" : ""
+                }`}
               style={{
                 backgroundColor: color,
                 ...(open && { transform: "skew(-15deg) scaleY(0.6)" }),
@@ -183,7 +180,12 @@ const Folder: React.FC<FolderProps> = ({
       </div>
       {label && (
         <span className="text-zinc-400 text-[10px] font-medium">
-          {label}
+          <ShinyText
+            text={label}
+            disabled={false}
+            speed={3}
+            className="custom-class"
+          />
         </span>
       )}
     </div>
