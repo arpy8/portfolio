@@ -31,12 +31,14 @@
           />
           <input
             type="email"
-            name="reply_to"
+            id="email"
+            name="email"
             placeholder="Email"
             required
             class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
           />
           <textarea
+            id="message"
             name="message"
             placeholder="Message"
             rows="6"
@@ -44,7 +46,8 @@
             class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)] resize-none"
           ></textarea>
           <button
-            type="submit"
+            type="submit" 
+            name="submit"
             class="px-4 py-2 bg-[var(--white-icon-tr)] text-[var(--white)] rounded-lg opacity-60 transition-opacity border border-[var(--white-icon-tr)] hover:opacity-100 hover:bg-[var(--white-icon-tr)]"
           >
             Submit

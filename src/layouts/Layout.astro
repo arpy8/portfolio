@@ -1,5 +1,5 @@
 ---
-import { inject } from '@vercel/analytics';
+import { inject } from "@vercel/analytics";
 inject();
 
 // import DisableDevtool from 'disable-devtool';
@@ -45,7 +45,7 @@ const { title, favicon } = Astro.props;
 
     <title>{title}</title>
   </head>
-  <body class="bg-[--background] md:px-48 lg:px-20 px-9">
+  <body class="bg-[--background] md:px-48 lg:px-20 px-9 overflow-x-hidden">
     <slot />
     <!-- <Analytics /> -->
   </body>

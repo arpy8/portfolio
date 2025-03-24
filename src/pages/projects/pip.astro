@@ -1,0 +1,22 @@
+---
+import Nav from "@/components/nav.astro";
+import Layout from "@/layouts/Layout.astro";
+import favicon from "/favicons/main.ico";
+import SplashCursor from "../../React/SplashCursor";
+---
+
+<Nav />
+<Layout title="Arpit Sengar | Projects" favicon={favicon}>
+    <div class="relative w-full min-h-screen bg-[#101010]">
+        <div class="absolute inset-0 z-10">
+            <SplashCursor client:load />
+        </div>
+        <section
+            class="relative z-20 w-full min-h-screen flex items-center justify-center text-[var(--white)] my-12 md:mt-0"
+            id="home"
+        >
+            <!-- Your content here -->
+            <h1 class="text-center">content for this section is yet to be added.</h1>
+        </section>
+    </div>
+</Layout>

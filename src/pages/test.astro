@@ -1,0 +1,16 @@
+---
+import Aurora from "../React/Aurora";
+---
+
+<section class="w-screen h-screen bg-black fixed inset-0" id="home">
+  <div class="absolute inset-0 w-screen h-screen">
+    <Aurora
+      client:only="react"
+      colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
+      blend={0.8}
+      amplitude={1.5}
+      speed={0.3}
+    />
+  </div>
+  <!-- Your other content can go here with higher z-index -->
+</section>

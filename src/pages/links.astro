@@ -1,319 +1,109 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import favicon from "/favicons/main.ico";
+import InfiniteMenu from "../React/InfiniteMenu";
 
-const links = [
+const items = [
   {
     title: "Website",
-    url: "/",
-    icon: "globe",
+    description: "Wow I have a website.",
+    link: "http://arpy8.com/",
+    image: "/icons/globe.png",
   },
   {
-    title: "Creativity Dump",
-    url: "https://www.instagram.com/eclectictrashh",
-    icon: "instagram",
+    title: "Linkedin",
+    description: "Need job.",
+    link: "https://www.linkedin.com/in/arpitsengar/",
+    image: "/icons/linkedin.png",
   },
   {
-    title: "Hugging Face",
-    url: "https://hf.co/arpy8",
-    icon: "huggingface",
+    title: "Github",
+    description: "This is where my code lives.",
+    link: "https://github.com/arpy8",
+    image: "/icons/github.png",
   },
   {
-    title: "Last.fm",
-    url: "https://www.last.fm/user/arpy8",
-    icon: "lastfm",
+    title: "Gmail",
+    description: "Consider sending a mail.",
+    link: "mailto:arpitsengar99@gmail.com",
+    image: "/icons/mail.png",
+  },
+  {
+    title: "Insta",
+    description: "Might post some cool stuff here.",
+    link: "https://www.instagram.com/arpy8_/",
+    image: "/icons/instagram.png",
+  },
+  {
+    title: "Youtube",
+    description: "Yup I have a channel.",
+    link: "https://www.youtube.com/@arpy8",
+    image: "/icons/youtube.png",
+  },
+  {
+    title: "Omdena",
+    description: "I am a Chapter Lead as well!",
+    link: "https://collaborator.omdena.com/collaborator-profile/59416/",
+    image: "/icons/omdena.jpg",
+  },
+  {
+    title: "Leetcode",
+    description: "Did some competitive programming earlier.",
+    link: "https://leetcode.com/u/arpy8/",
+    image: "/icons/leetcode.webp",
   },
   {
     title: "HackerRank",
-    url: "https://www.hackerrank.com/profile/arpy8",
-    icon: "hackerrank",
-  },
-];
-
-const socialLinks = [
-  {
-    name: "linkedin",
-    url: "https://www.linkedin.com/in/arpitsengar/",
-    icon: "linkedin",
-  },
-  { name: "github", url: "https://github.com/arpy8", icon: "github" },
-  {
-    name: "email",
-    url: "https://mail.google.com/mail/?view=cm&fs=1&to=arpitsengar99@gmail.com&su=Hey%20Arpit!",
-    icon: "mail",
+    description: "Did some competitive programming earlier.",
+    link: "https://www.hackerrank.com/profile/arpy8",
+    image: "/icons/hackerrank.png",
   },
   {
-    name: "instagram",
-    url: "https://www.instagram.com/arpy8_/",
-    icon: "instagram",
+    title: "HuggingFace",
+    description: "I mostly use this for API deployment.",
+    link: "https://hf.co/arpy8",
+    image: "/icons/huggingface.svg",
   },
-  { name: "youtube", url: "https://www.youtube.com/@arpy8", icon: "youtube" },
+  {
+    title: "Last.fm",
+    description: "Get to know my music taste.",
+    link: "https://www.last.fm/user/arpy8",
+    image: "/icons/lastfm.png",
+  },
+  {
+    link: "https://www.reddit.com/user/Physical-Pudding-833/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button",
+    title: "Reddit",
+    description: "I shitpost here sometimes.",
+    image: "/icons/reddit.png",
+  },
+  {
+    title: "Spotify",
+    description: "Get to know my music taste.",
+    link: "https://open.spotify.com/user/314en4ia7eeyco74hvxp6254hmam",
+    image: "/icons/spotify.webp",
+  },
+  {
+    title: "Letterboxd",
+    description: "I rate movies here (sometimes).",
+    link: "https://letterboxd.com/arpy8/",
+    image: "/icons/letterboxd.svg",
+  },
+  // {
+  //   title: "Snapchat",
+  //   description: "Get to know my music taste.",
+  //   link: "https://open.spotify.com/user/314en4ia7eeyco74hvxp6254hmam",
+  //   image: "/icons/snapchat.webp",
+  // },
 ];
 ---
 
-<Layout title="arpy8 | Links" favicon={favicon}>
-  <div class="noise"></div>
-  <div class="min-h-screen flex flex-col items-center py-16 px-4 relative z-10">
-    <div class="flex flex-col items-center mb-12 animate-fadeIn">
-      <div
-        class="w-20 h-20 md:w-24 md:h-24 mb-6 flex items-center justify-center rounded-full bg-[#1414149c] backdrop-blur-xl border border-[#ffffff1a] hover:scale-110 transition-transform duration-300 overflow-hidden"
-      >
-        <img
-          src="https://ugc.production.linktr.ee/ZzsjOFnbTuOTFD1aKyff_dFaRr9x2WV0ZGBq5?io=true&size=avatar-v3_0"
-          alt="Eye"
-          class="w-full h-full rounded-full object-fit"
-        />
-      </div>
-      <h1 class="text-2xl md:text-3xl font-bold mb-2">
-        <span class="text-[var(--sec)] shiny-sec">arpy8</span>
-      </h1>
-      <p class="text-white text-base md:text-lg mb-8 md:mb-12">
-        an average cs student
-      </p>
-
-      <div class="w-full md:w-[22em] space-y-3 md:space-y-4 px-4 md:px-0">
-        {
-          links.map((link) => (
-            <a
-              target="_blank"
-              href={link.url}
-              class="group flex items-center justify-between bg-[#111] border border-[#ffffff1a] rounded-xl py-2.5 md:py-3 px-4 md:px-6 w-full transform transition-all duration-300 hover:scale-[1.02] hover:border-[#ffffff40] hover:bg-[#222] text-white"
-            >
-              <div class="flex items-center">
-                <div class="w-8 h-8 md:w-10 md:h-10 mr-3 md:mr-4 flex items-center justify-center bg-black/30 rounded-lg group-hover:scale-110 transition-transform">
-                  <span class="font-bold">
-                    <img
-                      src={`https://raw.githubusercontent.com/arpy8/arpy8/refs/heads/main/links/${link.icon}.svg`}
-                      alt={"tech.alt"}
-                      class="h-5 w-5 object-contain filter brightness-0 invert opacity-50"
-                      loading="lazy"
-                    />
-                  </span>
-                </div>
-                <span class="text-base md:text-lg font-medium">
-                  {link.title}
-                </span>
-              </div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-gray-400 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </a>
-          ))
-        }
-      </div>
-    </div>
-
-    <!-- Social Media Icons -->
-    <div
-      class="flex flex-wrap justify-center gap-6 md:gap-8 mt-4 mb-8 md:mb-12 px-4"
-    >
-      {
-        socialLinks.map((social) => (
-          <a
-            target="_blank"
-            href={social.url}
-            class="text-white/70 hover:text-white transform hover:scale-125 transition-all duration-300"
-            aria-label={social.name}
-          >
-            {social.icon === "linkedin" && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                class="w-6 h-6 md:w-8 md:h-8"
-              >
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                <rect x="2" y="9" width="4" height="12" />
-                <circle cx="4" cy="4" r="2" />
-              </svg>
-            )}
-            {social.icon === "github" && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                class="w-6 h-6 md:w-8 md:h-8"
-              >
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-              </svg>
-            )}
-            {social.icon === "mail" && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                class="w-6 h-6 md:w-8 md:h-8"
-              >
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-            )}
-            {social.icon === "instagram" && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                class="w-6 h-6 md:w-8 md:h-8"
-              >
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-              </svg>
-            )}
-            {social.icon === "spotify" && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                class="w-6 h-6 md:w-8 md:h-8"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <circle cx="12" cy="12" r="4" />
-                <line x1="21.17" y1="8" x2="12" y2="8" />
-                <line x1="3.95" y1="6.06" x2="8.54" y2="14" />
-                <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
-              </svg>
-            )}
-            {social.icon === "B." && <span class="font-bold">B.</span>}
-            {social.icon === "youtube" && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                class="w-6 h-6 md:w-8 md:h-8"
-              >
-                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
-                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
-              </svg>
-            )}
-          </a>
-        ))
-      }
-    </div>
+<head>
+  <title>Arpit Sengar | Gallery</title>
+  <link rel="icon" href="/favicons/main.ico" />
+</head>
+<section
+  id="links"
+  class="border-[#ffffff10] text-white bg-black w-full h-screen"
+>
+  <div class="w-full h-full">
+    <InfiniteMenu client:load items={items} />
   </div>
-</Layout>
-
-<style>
-  .animate-fadeIn {
-    animation: fadeIn 0.8s ease-out;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .shiny-sec {
-    background: linear-gradient(135deg, #a476ff 25%, #eee5ff 50%, #a476ff 75%);
-    background-size: 400% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: shine 3s linear infinite;
-  }
-
-  @keyframes shine {
-    0% {
-      background-position: 100% 50%;
-    }
-    30%,
-    70% {
-      background-position: 0% 50%;
-    }
-  }
-
-  /* Add smooth scrolling */
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* Improve mobile tap targets */
-  @media (max-width: 768px) {
-    .social-icons a {
-      padding: 0.5rem;
-    }
-  }
-
-  /* Adjust container width on very small screens */
-  @media (max-width: 360px) {
-    .w-full {
-      width: 95%;
-    }
-  }
-
-  .noise {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.8;
-    z-index: 1;
-    pointer-events: none;
-    animation: grain 0.8s steps(1) infinite;
-  }
-
-  @keyframes grain {
-    0% { background-position: 0% 0%; }
-    20% { background-position: 50% 50%; }
-    40% { background-position: 25% 25%; }
-    60% { background-position: 75% 75%; }
-    80% { background-position: 40% 60%; }
-    100% { background-position: 60% 40%; }
-  }
-
-  .noise::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.08;
-    mix-blend-mode: overlay;
-  }
-</style>
+</section>

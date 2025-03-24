@@ -8,6 +8,7 @@ import react from '@astrojs/react';
 export default defineConfig({
   integrations: [tailwind(), react()],
   vite: {
+    assetsInclude: ['**/*.glb'],
     resolve: {
       alias: {
         '@': '/src',
