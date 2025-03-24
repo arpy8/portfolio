@@ -251,6 +251,7 @@ const FollowCursor: React.FC<FollowCursorProps> = ({
 
   return (
     <div className={`container ${className}`} ref={containerRef}>
+      {/* @ts-ignore */}
       <animated.div
         ref={domTarget}
         className="relative absolute w-[180px] h-[150px] bg-cover bg-[url('https://res.cloudinary.com/practicaldev/image/fetch/s--8mUhEkXE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/km2w1ppw3yw9pd9na7mu.gif')] rounded-[15px] shadow-[0px_10px_30px_-5px_rgba(0,0,0,0.3)] transition-shadow transition-opacity duration-500 [will-change:transform] touch-none"
@@ -265,6 +266,7 @@ const FollowCursor: React.FC<FollowCursorProps> = ({
           rotateZ: enableZoom ? (rotateZ as SpringValue<number>) : 0,
         }}
       >
+        {/* @ts-ignore */}
         <animated.div style={{ transform: wheelY.to(wheelTransform) }}>
           {children}
         </animated.div>
