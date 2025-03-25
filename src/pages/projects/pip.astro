@@ -3,6 +3,92 @@ import Nav from "@/components/nav.astro";
 import Layout from "@/layouts/Layout.astro";
 import favicon from "/favicons/main.ico";
 import SplashCursor from "../../React/SplashCursor";
+import ShinyText from "@/React/ShinyText";
+import { Image } from "astro:assets";
+
+import rcps from "../../../public/projects/pip/rcps.png";
+import disdial from "../../../public/projects/pip/disdial.png";
+import hlokty from "../../../public/projects/pip/hlokty.png";
+import lebon from "../../../public/projects/pip/lebon.png";
+import arpit from "../../../public/projects/pip/arpit.png";
+import bsod from "../../../public/projects/pip/bsod.png";
+import aiconclave from "../../../public/projects/pip/aiconclave.png";
+import roadrage from "../../../public/projects/pip/roadrage.png";
+import pikmin from "../../../public/projects/pip/pikmin.png";
+
+interface Project {
+    title: string;
+    image: ImageMetadata;
+    link: string;
+    preview: string;
+    status: string;
+}
+
+const projects: Project[] = [
+    {
+        title: "RCPS",
+        image: rcps as ImageMetadata,
+        link: "https://github.com/arpy8/rcps",
+        preview: "https://pypi.org/project/rcps/",
+        status: "A package to control remote desktop just like TeamViewer",
+    },
+    {
+        title: "Disdial",
+        image: disdial as ImageMetadata,
+        link: "https://github.com/arpy8/disdial",
+        preview: "https://pypi.org/project/disdial/",
+        status: "A terminal based IRC inspired package to chat on a common server.",
+    },
+    {
+        title: "Hlokty",
+        image: hlokty as ImageMetadata,
+        link: "https://github.com/arpy8/hlokty",
+        preview: "https://pypi.org/project/hlokty/",
+        status: "Dubious tool that captures hosts IP and Wifi passwords",
+    },
+    {
+        title: "Lebon",
+        image: lebon as ImageMetadata,
+        link: "https://github.com/arpy8/lebon",
+        preview: "https://pypi.org/project/lebon/",
+        status: "A smart assistant to help you solve your questions *wink* *wink*",
+    },
+    {
+        title: "Arpit",
+        image: arpit as ImageMetadata,
+        link: "https://github.com/arpy8/arpit",
+        preview: "https://pypi.org/project/arpit/",
+        status: "Will you be my friend?",
+    },
+    {
+        title: "BSOD",
+        image: bsod as ImageMetadata,
+        link: "https://github.com/arpy8/bsod",
+        preview: "https://pypi.org/project/bsod/",
+        status: "A package I made to simulate BSOD for fun :3",
+    },
+    {
+        title: "Aiconclave",
+        image: aiconclave as ImageMetadata,
+        link: "https://github.com/arpy8/aiconclave",
+        preview: "https://pypi.org/project/aiconclave/",
+        status: "Launches a desktop application to play several games using gestures",
+    },
+    {
+        title: "Roadrage",
+        image: roadrage as ImageMetadata,
+        link: "https://github.com/arpy8/roadrage",
+        preview: "https://pypi.org/project/roadrage/",
+        status: "Launches a desktop application to play several games using gestures",
+    },
+    {
+        title: "Pikmin",
+        image: pikmin as ImageMetadata,
+        link: "https://github.com/arpy8/pikmin",
+        preview: "https://pypi.org/project/pikmin/",
+        status: "Say hi to pikmin from your terminal.",
+    },
+];
 ---
 
 <Nav />
@@ -15,10 +101,83 @@ import SplashCursor from "../../React/SplashCursor";
             class="relative z-20 w-full min-h-screen flex items-center justify-center text-[var(--white)] my-12 md:mt-0"
             id="home"
         >
-            <!-- Your content here -->
-            <h1 class="text-center">
-                content will be added soon.
-            </h1>
+            <div class="max-w-5xl mx-auto lg:my-36 md:my-0">
+                <a href="/projects">
+                    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">
+                        Projects
+                    </h2>
+                </a>
+                <h3 class="text-4xl md:text-5xl font-medium mb-8">
+                    <a href="https://pypi.org/user/arpy8/" target="_blank">
+                        <ShinyText text="Python Packages" />
+                    </a>
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {
+                        projects.map((project) => (
+                            <div class="group">
+                                <a
+                                    href={project.preview}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="block"
+                                >
+                                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
+                                        <Image
+                                            src={project.image}
+                                            alt={project.title}
+                                            class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
+                                        />
+                                    </div>
+                                    <div class="flex items-center px-3">
+                                        <div class="flex-grow">
+                                            <h4 class="text-2xl font-semibold">
+                                                {project.title}
+                                            </h4>
+                                            <span class="py-1 text-sm text-[var(--white-icon)]">
+                                                {project.status}
+                                            </span>
+                                        </div>
+                                        <div class="flex gap-2 ml-auto">
+                                            <a
+                                                target="_blank"
+                                                href={project.link}
+                                                aria-label="GitHub"
+                                                class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                                            >
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24"
+                                                    fill="currentColor"
+                                                    class="size-7"
+                                                >
+                                                    <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z" />
+                                                </svg>
+                                            </a>
+                                            <a
+                                                target="_blank"
+                                                href={project.preview}
+                                                aria-label="Preview"
+                                                class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                                            >
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24"
+                                                    fill="currentColor"
+                                                    class="size-7"
+                                                >
+                                                    <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
         </section>
     </div>
 </Layout>
