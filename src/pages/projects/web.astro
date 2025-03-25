@@ -3,6 +3,109 @@ import Nav from "@/components/nav.astro";
 import Layout from "@/layouts/Layout.astro";
 import favicon from "/favicons/main.ico";
 import SplashCursor from "../../React/SplashCursor";
+import ShinyText from "@/React/ShinyText";
+
+import { Image } from "astro:assets";
+
+import baatcheet from "../../../public/projects/web/baatcheet.png";
+import man from "../../../public/projects/web/man.png";
+import gfg from "../../../public/projects/web/gfg.png";
+import tech from "../../../public/projects/web/tech.png";
+import tindog from "../../../public/projects/web/tindog.png";
+import st from "../../../public/projects/web/st.png";
+import uno from "../../../public/projects/web/uno.png";
+import duos from "../../../public/projects/web/duos.png";
+import qutro from "../../../public/projects/web/quatro.png";
+import tres from "../../../public/projects/web/tres.png";
+import cinco from "../../../public/projects/web/cinco.png";
+
+interface Project {
+    title: string;
+    image: ImageMetadata;
+    link: string;
+    preview: string;
+    status: string;
+}
+
+const projects: Project[] = [
+    {
+        title: "Baatcheet",
+        image: baatcheet as ImageMetadata,
+        link: "https://huggingface.co/spaces/arpy8/baatcheet",
+        preview: "https://arpy8-baatcheet.hf.space/",
+        status: "Secure peer-to-peer video calling application",
+    },
+    {
+        title: "ManMitra",
+        image: man as ImageMetadata,
+        link: "https://github.com/arpy8/manmitra",
+        preview: "https://manmitra.arpy8.com/",
+        status: "Developed this for a hackathon",
+    },
+    {
+        title: "GFG Student Chapter - VIT Bhopal Website",
+        image: gfg as ImageMetadata,
+        link: "https://github.com/arpy8/ArpitSengar_TaskRound_GFG_VITB",
+        preview: "https://arpy8.github.io/ArpitSengar_TaskRound_GFG_VITB",
+        status: "Developed this for GFG's internal Task Round",
+    },
+    {
+        title: "Tech News Website",
+        image: tech as ImageMetadata,
+        link: "https://github.com/arpy8/Tech_News_Website",
+        preview: "https://techtoday.streamlit.app/",
+        status: "Made this under just one line of code",
+    },
+    {
+        title: "Tindog",
+        image: tindog as ImageMetadata,
+        link: "https://github.com/arpy8/tindog/",
+        preview: "https://arpy8.github.io/tindog/",
+        status: "A simple static website made using HTML CSS & Bootstrap",
+    },
+    {
+        title: "NewsPulse",
+        image: st as ImageMetadata,
+        link: "https://github.com/arpy8/Streamlit_Connection_Hackathon",
+        preview: "https://connectionshackathon.streamlit.app/",
+        status: "My submission for the Streamlit Connections Hackathon",
+    },
+    {
+        title: "Portfolio Website - Uno",
+        image: uno as ImageMetadata,
+        link: "https://github.com/arpy8/portfolios/tree/main/1",
+        preview: "https://arpy8.github.io/portfolios/1/index.html",
+        status: "My first portfolio website",
+    },
+    {
+        title: "Portfolio Website - Dos",
+        image: duos as ImageMetadata,
+        link: "https://github.com/arpy8/portfolios/tree/main/2",
+        preview: "https://arpy8.github.io/portfolios/2/index.html",
+        status: "My first portfolio website",
+    },
+    {
+        title: "Portfolio Website - Tres",
+        image: qutro as ImageMetadata,
+        link: "https://github.com/arpy8/portfolios/tree/main/3",
+        preview: "https://arpy8.github.io/portfolios/3/index.html",
+        status: "My first portfolio website",
+    },
+    {
+        title: "Portfolio Website - Quatro",
+        image: tres as ImageMetadata,
+        link: "https://github.com/arpy8/portfolios/tree/main/4",
+        preview: "https://arpy8.github.io/portfolios/4/index.html",
+        status: "My first portfolio website",
+    },
+    {
+        title: "Portfolio Website - Cinco",
+        image: cinco as ImageMetadata,
+        link: "https://github.com/arpy8/portfolios/tree/main/5",
+        preview: "https://arpy8.github.io/portfolios/5/index.html",
+        status: "My first portfolio website",
+    },
+];
 ---
 
 <Nav />
@@ -15,10 +118,81 @@ import SplashCursor from "../../React/SplashCursor";
             class="relative z-20 w-full min-h-screen flex items-center justify-center text-[var(--white)] my-12 md:mt-0"
             id="home"
         >
-            <!-- Your content here -->
-            <h1 class="text-center">
-                Content will be added soon.
-            </h1>
+            <div class="max-w-5xl mx-auto lg:my-36 md:my-0">
+                <a href="/projects">
+                    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">
+                        Projects
+                    </h2>
+                </a>
+                <h3 class="text-4xl md:text-5xl font-medium mb-8">
+                    <ShinyText text="Web Development" />
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {
+                        projects.map((project) => (
+                            <div class="group">
+                                <a
+                                    href={project.preview}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="block"
+                                >
+                                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
+                                        <Image
+                                            src={project.image}
+                                            alt={project.title}
+                                            class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
+                                        />
+                                    </div>
+                                    <div class="flex items-center px-3">
+                                        <div class="flex-grow">
+                                            <h4 class="text-2xl font-semibold">
+                                                {project.title}
+                                            </h4>
+                                            <span class="py-1 text-sm text-[var(--white-icon)]">
+                                                {project.status}
+                                            </span>
+                                        </div>
+                                        <div class="flex gap-2 ml-auto">
+                                            <a
+                                                target="_blank"
+                                                href={project.link}
+                                                aria-label="GitHub"
+                                                class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                                            >
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24"
+                                                    fill="currentColor"
+                                                    class="size-7"
+                                                >
+                                                    <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z" />
+                                                </svg>
+                                            </a>
+                                            <a
+                                                target="_blank"
+                                                href={project.preview}
+                                                aria-label="Preview"
+                                                class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                                            >
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24"
+                                                    fill="currentColor"
+                                                    class="size-7"
+                                                >
+                                                    <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
         </section>
     </div>
 </Layout>

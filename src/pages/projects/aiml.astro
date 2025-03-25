@@ -7,6 +7,8 @@ import ShinyText from "@/React/ShinyText";
 
 import { Image } from "astro:assets";
 
+import maximus from "../../../public/projects/aiml/maximus.png";
+import skin from "../../../public/projects/aiml/skin.png";
 import alzheimer from "../../../public/projects/aiml/alzheimer.png";
 import insaights from "../../../public/projects/aiml/insaights.png";
 import plant from "../../../public/projects/aiml/plant.png";
@@ -25,6 +27,20 @@ interface Project {
 
 const projects: Project[] = [
     {
+        title: "MaximusML",
+        image: maximus as ImageMetadata,
+        link: "https://github.com/arpy8/PreProd-Corp---Buildathon-2024---Gyatt-Maximus",
+        preview: "https://github.com/arpy8/PreProd-Corp---Buildathon-2024---Gyatt-Maximus/tree/main/static/images",
+        status: "Desktop Application for Automated ML Model Building",
+    },
+    {
+        title: "Skin Lesion Classification Api",
+        image: skin as ImageMetadata,
+        link: "https://huggingface.co/spaces/arpy8/skin-lesion-classification-api/tree/main",
+        preview: "https://arpy8-skin-lesion-classification-api.hf.space/docs",
+        status: "Skin Lesion Classification API built using GroundingDINO and EfficientNetB2",
+    },
+    {
         title: "GTA Hand Gesture Control",
         image: mediapipe as ImageMetadata,
         link: "https://github.com/arpy8/mediapipe-scripts-for-AI-conclave",
@@ -36,21 +52,21 @@ const projects: Project[] = [
         image: doorchime as ImageMetadata,
         link: "https://github.com/arpy8/Door_Chime_using_OpenCV",
         preview: "https://github.com/arpy8/Door_Chime_using_OpenCV",
-        status: "Made this for fun to play a door chime when someone enters the room",
+        status: "A script I wrote to play a door chime audio whenever someone enters my room.",
     },
     {
         title: "Plant Disease Detection using CNN",
         image: plant as ImageMetadata,
         link: "https://github.com/arpy8/Plant_Disease_Detection",
         preview: "https://plant-disease-detection-pkue.onrender.com/",
-        status: "Developed this during my learning phase of ML",
+        status: "Developed a simple CNN during my early days of learning ML",
     },
     {
         title: "insAIghts: Video Notes Generator",
         image: insaights as ImageMetadata,
         link: "https://github.com/arpy8/insaights",
         preview: "https://insaights.streamlit.app/",
-        status: "Made this with my senior roommate for streamlit's hackathon",
+        status: "AI Video notes generator I made with my senior roommate for a streamlit hackathon",
     },
     {
         title: "Alzheimer's Prediction System using Logistic Regression",
@@ -64,14 +80,14 @@ const projects: Project[] = [
         image: sheikh as ImageMetadata,
         link: "https://github.com/arpy8/Plant_Disease_Detection",
         preview: "https://shakespeares-sonnets.streamlit.app/",
-        status: "Developed this for a club's interview",
+        status: "Made for a club's internal round",
     },
     {
         title: "Sleep Analysis Prediction",
         image: sleep as ImageMetadata,
         link: "https://github.com/arpy8/Sleep_Efficiency_Analysis",
         preview: "https://sleepefficiencyanalysis.streamlit.app/",
-        status: "Made this simple project for an assignment",
+        status: "This was for my data science assignment",
     },
 ];
 ---
