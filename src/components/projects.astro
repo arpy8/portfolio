@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import baatcheet from "../../public/projects/web/baatcheet.png";
-import drishti from "../../public/projects/drishti.png";
+import lo62 from "../../public/projects/hardware/lo62.png";
 
 interface Project {
   title: string;
@@ -13,11 +13,11 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Drishti",
-    image: drishti as ImageMetadata,
-    link: "https://github.com/epicshi",
-    preview: "https://drishti-web-app.vercel.app/",
-    status: "In Development",
+    title: "Project LO62",
+    image: lo62 as ImageMetadata,
+    link: "https://github.com/arpy8/lo62",
+    preview: "https://www.thingiverse.com/thing:6987833",
+    status: "My first ever electric vehicle project",
   },
   {
     title: "BaatCheet",
@@ -101,7 +101,7 @@ const projects: Project[] = [
     </div>
     <a
       target="_blank"
-      href="https://arpy8.github.io/projects/"
+      href="/projects"
       aria-label="GitHub"
       class="w-full flex items-center justify-center gap-2 mt-9 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-full bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
     >
