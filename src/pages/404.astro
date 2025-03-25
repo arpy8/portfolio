@@ -1,0 +1,50 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import SplashCursor from "../React/SplashCursor";
+import favicon from "/favicons/main.ico";
+---
+
+<Nav />
+<Layout title="404 - Page Not Found" favicon={favicon}>
+  <div class="absolute inset-0 -z-10">
+    <SplashCursor client:load />
+  </div>
+  
+  <div class="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-4">
+    <h1 class="shiny-sec text-4xl md:text-8xl font-medium mb-8">
+        404
+    </h1>
+    <h2 class="text-2xl md:text-3xl text-[var(--white)] mb-8">Page Not Found</h2>
+    <p class="text-[var(--white-icon)] mb-8 max-w-md">
+      The page you're looking for doesn't exist or has been moved.
+    </p>
+    <a
+      href="/"
+      class="px-6 py-3 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+    >
+      Return Home
+    </a>
+  </div>
+</Layout>
+
+<style>
+  .shiny-sec {
+    background: linear-gradient(135deg, #a476ff 25%, #eee5ff 50%, #a476ff 75%);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 3s linear infinite;
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 100% 50%;
+    }
+    30%,
+    70% {
+      background-position: 0% 50%;
+    }
+  }
+</style>
