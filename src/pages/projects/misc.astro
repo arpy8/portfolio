@@ -8,6 +8,7 @@ import ShinyText from "@/React/ShinyText";
 import { Image } from "astro:assets";
 import lemme from "../../../public/projects/misc/lemme.png";
 import ppup from "../../../public/projects/misc/ppup.png";
+import pastfm from "../../../public/projects/misc/pastfm.png";
 
 interface Project {
     title: string;
@@ -31,6 +32,13 @@ const projects: Project[] = [
         link: "https://github.com/arpy8/popup-masty",
         preview: "https://ppup.vercel.app/",
         status: "A cute little js script to spam popups.",
+    },
+    {
+        title: "PastFm",
+        image: pastfm as ImageMetadata,
+        link: "https://github.com/arpy8/pastfm",
+        preview: "https://github.com/arpy8",
+        status: "YT Music now playing card for my github profile.",
     },
 ];
 ---
