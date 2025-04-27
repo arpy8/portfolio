@@ -4,39 +4,78 @@ import Nav from "@/components/nav.astro";
 import SplashCursor from "../React/SplashCursor";
 import favicon from "/favicons/main.ico";
 
-const redirectUrl = "/misc/Arpit_Sengar_Resume.pdf";
+const resumeFileName = "Arpit_Sengar_Resume.pdf";
+const resumePath = `/misc/${resumeFileName}`;
+const pageTitle = "Arpit Sengar | Resume";
 ---
 
-<html>
-  <head>
-    <meta http-equiv="refresh" content={`0; url=${redirectUrl}`} />
-    <title>Redirecting...</title>
-  </head>
-  <body>
-    <Nav />
-    <Layout title="Arpit Sengar | Resume" favicon={favicon}>
-      <div class="absolute inset-0 -z-10">
-        <SplashCursor client:load />
-      </div>
+<Layout title={pageTitle} favicon={favicon}>
+  <Nav />
+  <div class="absolute inset-0 -z-10">
+    <SplashCursor client:load />
+  </div>
 
-      <div
-        class="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-4"
-      >
-        <p class="text-[var(--white-icon)] mb-8 max-w-md">
-            If download did not start automatically, <a href={redirectUrl}>click here</a>.
+  <main class="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-4">
+    <h1 class="sr-only">Resume Download</h1>
+    
+    <section class="bg-[#14141480] backdrop-blur-md p-8 rounded-2xl border border-[var(--white-icon-tr)] max-w-md w-full shadow-lg">
+      <div class="space-y-6">
+        <p class="text-[var(--white-icon)]">
+          Download should start automatically.
         </p>
-        <!-- <a
+        <p class="text-[var(--white-icon)]">
+          If download didn't start, <a 
+            href={resumePath}
+            class="text-[#a476ff] hover:underline focus:underline font-medium transition-colors duration-300"
+            aria-label="Download resume manually"
+            download={resumeFileName}
+            id="manual-download"
+          >
+            click here
+          </a>.
+        </p>
+      </div>
+      
+      <div class="mt-8">
+        <a
           href="/"
-          class="px-6 py-3 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+          class="inline-block px-6 py-3 text-[var(--white-icon)] hover:text-white focus:text-white transition-colors duration-300 ease-in-out border border-[var(--white-icon-tr)] rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)] focus:bg-[var(--white-icon-tr)] focus:outline-none focus:ring-2 focus:ring-[#a476ff]"
+          aria-label="Return to homepage"
         >
           Return Home
-        </a> -->
+        </a>
       </div>
-    </Layout>
-  </body>
-</html>
+    </section>
+  </main>
+
+  <!-- Auto-download script -->
+  <script define:vars={{ resumePath, resumeFileName }}>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Start download after a slight delay
+      setTimeout(() => {
+        try {
+          const link = document.createElement('a');
+          link.href = resumePath;
+          link.download = resumeFileName;
+          link.style.display = 'none';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        } catch (error) {
+          console.error('Auto-download failed:', error);
+          // Highlight the manual download option if auto-download fails
+          const manualLink = document.getElementById('manual-download');
+          if (manualLink) {
+            manualLink.classList.add('animate-pulse', 'font-bold');
+          }
+        }
+      }, 800);
+    });
+  </script>
+</Layout>
 
 <style>
+  /* Shiny text animation */
   .shiny-sec {
     background: linear-gradient(135deg, #a476ff 25%, #eee5ff 50%, #a476ff 75%);
     background-size: 400% 100%;
@@ -47,12 +86,14 @@ const redirectUrl = "/misc/Arpit_Sengar_Resume.pdf";
   }
 
   @keyframes shine {
-    0% {
-      background-position: 100% 50%;
-    }
-    30%,
-    70% {
-      background-position: 0% 50%;
-    }
+    0% { background-position: 100% 50%; }
+    30%, 70% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+  
+  /* Focus styles for accessibility */
+  :focus {
+    outline: 2px solid #a476ff;
+    outline-offset: 2px;
   }
 </style>
