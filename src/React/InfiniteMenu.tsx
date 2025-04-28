@@ -1109,7 +1109,7 @@ class InfiniteGridMenu {
         gl.enable(gl.CULL_FACE);
         gl.enable(gl.DEPTH_TEST);
 
-        gl.clearColor(0, 0, 0, 0);
+        gl.clearColor(0.0627, 0.0627, 0.0627, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
         gl.uniformMatrix4fv(
@@ -1402,8 +1402,8 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
                                 z-10
                                 lg:w-[60px]
                                 lg:h-[60px]
-                                md:w-[160px]
-                                md:h-[160px]
+                                md:w-[200px]
+                                md:h-[200px]
                                 md:absolute
                                 md:bottom-[5%]
                                 text-center
@@ -1418,7 +1418,7 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
                                 ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
                                 ${isMoving
                                 ? "bottom-[-80px] opacity-0 pointer-events-none duration-[100ms] scale-0 -translate-x-1/2"
-                                : "bottom-[3.8em] opacity-100 pointer-events-auto duration-[500ms] scale-100 -translate-x-1/2 hover:bg-[#00cccc] hover:scale-110"
+                                : "bottom-[12.8em] opacity-100 pointer-events-auto duration-[500ms] scale-100 -translate-x-1/2 hover:bg-[#00cccc] hover:scale-110"
                             }
                     `}>
                         <p className="select-none relative text-[#060606] lg:top-[2px] md:bottom-[5px] lg:text-[26px] md:text-[52px]">
