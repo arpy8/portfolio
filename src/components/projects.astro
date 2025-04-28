@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import baatcheet from "../../public/projects/web/baatcheet.png";
 import lo62 from "../../public/projects/hardware/lo62.png";
+import favicon from "/favicons/main.ico";
 
 interface Project {
   title: string;
@@ -28,10 +29,13 @@ const projects: Project[] = [
   },
 ];
 ---
-
+<head>
+  <title>Arpit Sengar | Projects</title>
+  <link rel="icon" href={favicon} />
+</head>
 <section
   id="projects"
-  class="py-12 border-t border-[#ffffff10] text-[var(--white)]"
+  class="py-12"
 >
   <div class="max-w-5xl mx-auto">
     <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">My work</h2>
