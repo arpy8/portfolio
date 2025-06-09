@@ -7,6 +7,7 @@ import ShinyText from "@/React/ShinyText";
 
 import { Image } from "astro:assets";
 
+import als from "../../../public/projects/web/als.png";
 import baatcheet from "../../../public/projects/web/baatcheet.png";
 import man from "../../../public/projects/web/man.png";
 import gfg from "../../../public/projects/web/gfg.png";
@@ -28,6 +29,13 @@ interface Project {
 }
 
 const projects: Project[] = [
+    {
+        title: "Demo AL's Tattoo Studio Website",
+        image: als as ImageMetadata,
+        link: "https://github.com/arpy8/alstattoostudio",
+        preview: "https://alstattoostudio.vercel.app/",
+        status: "Simple static site I made for AL's Tattoo Studio",
+    },
     {
         title: "Baatcheet",
         image: baatcheet as ImageMetadata,

@@ -9,6 +9,7 @@ import { Image } from "astro:assets";
 import lemme from "../../../public/projects/misc/lemme.png";
 import ppup from "../../../public/projects/misc/ppup.png";
 import pastfm from "../../../public/projects/misc/pastfm.png";
+import dirdl from "../../../public/projects/misc/dirdl.png";
 
 interface Project {
     title: string;
@@ -19,6 +20,13 @@ interface Project {
 }
 
 const projects: Project[] = [
+    {
+        title: "DirDL",
+        image: dirdl as ImageMetadata,
+        link: "https://dirdl.arpy8.com",
+        preview: "https://github.com/arpy8/dirdl",
+        status: "My personal github directory downloader.",
+    },
     {
         title: "PastFm",
         image: pastfm as ImageMetadata,
