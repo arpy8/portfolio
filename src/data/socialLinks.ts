@@ -1,5 +1,11 @@
 export const socialLinks = [
-    {
+  {
+    title: "Github",
+    description: "This is where my code lives.",
+    link: "https://github.com/arpy8",
+    image: "/icons/github.png",
+  },
+  {
       title: "Website",
       description: "Wow I have a website.",
       link: "http://arpy8.com/",
@@ -10,12 +16,6 @@ export const socialLinks = [
       description: "Need job.",
       link: "https://www.linkedin.com/in/arpitsengar/",
       image: "/icons/linkedin.png",
-    },
-    {
-      title: "Github",
-      description: "This is where my code lives.",
-      link: "https://github.com/arpy8",
-      image: "/icons/github.png",
     },
     {
       title: "Gmail",

@@ -6,6 +6,7 @@ import SplashCursor from "../../React/SplashCursor";
 import ShinyText from "@/React/ShinyText";
 import { Image } from "astro:assets";
 
+import bha from "../../../public/projects/pip/bha.png";
 import rcps from "../../../public/projects/pip/rcps.png";
 import disdial from "../../../public/projects/pip/disdial.png";
 import hlokty from "../../../public/projects/pip/hlokty.png";
@@ -25,6 +26,13 @@ interface Project {
 }
 
 const projects: Project[] = [
+    {
+        title: "Browser History Analytics",
+        image: rcps as ImageMetadata,
+        link: "https://github.com/arpy8/browser-history-analytics",
+        preview: "https://github.com/arpy8/browser-history-analytics",
+        status: "A package to visualize your browser history :D",
+    },
     {
         title: "RCPS",
         image: rcps as ImageMetadata,
