@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import baatcheet from "../../public/projects/web/baatcheet.png";
-import lo62 from "../../public/projects/hardware/lo62.png";
+import wylt from "../../public/projects/hardware/wylt.png";
+import aasha from "../../public/projects/hardware/aasha.png";
 import favicon from "/favicons/main.ico";
 
 interface Project {
@@ -14,29 +14,29 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Project LO62",
-    image: lo62 as ImageMetadata,
-    link: "https://github.com/arpy8/lo62",
-    preview: "https://www.instagram.com/p/DHnxz6oNP25/",
-    status: "My first ever electric vehicle project",
+    title: "WYLt",
+    image: wylt as ImageMetadata,
+    link: "https://wylt.arpy8.com/",
+    preview: "https://www.instagram.com/stories/highlights/18056163440239794/",
+    status:
+      "A cute little bag charm that shows your currently playing song, perfect as a desk decor or keychain. ",
   },
   {
-    title: "BaatCheet",
-    image: baatcheet as ImageMetadata,
-    link: "https://github.com/arpy8/BaatCheet",
-    preview: "https://arpy8-baatcheet.hf.space",
-    status: "Secure peer-to-peer video communication",
+    title: "Aasha AI",
+    image: aasha as ImageMetadata,
+    link: "https://aasha.arpy8.com/",
+    preview: "https://github.com/arpy8/AashaAi",
+    status:
+      "An mini assistant designed to support college students during challenging times.",
   },
 ];
 ---
+
 <head>
   <title>Arpit Sengar | Projects</title>
   <link rel="icon" href={favicon} />
 </head>
-<section
-  id="projects"
-  class="py-12 text-white"
->
+<section id="projects" class="py-12 text-white">
   <div class="max-w-5xl mx-auto">
     <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">My work</h2>
     <h3 class="text-4xl md:text-5xl font-medium mb-8">Projects</h3>
