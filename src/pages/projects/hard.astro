@@ -10,6 +10,8 @@ import { Image } from "astro:assets";
 import drishti from "../../../public/projects/hardware/drishti.png";
 import hastakriti from "../../../public/projects/hardware/hastakriti.png";
 import lo62 from "../../../public/projects/hardware/lo62.png";
+import aasha from "../../../public/projects/hardware/aasha.png";
+import wylt from "../../../public/projects/hardware/wylt.png";
 
 interface Project {
     title: string;
@@ -20,6 +22,20 @@ interface Project {
 }
 
 const projects: Project[] = [
+    {
+        title: "WYLt",
+        image: wylt as ImageMetadata,
+        link: "https://wylt.arpy8.com/",
+        preview: "https://www.instagram.com/stories/highlights/18056163440239794/",
+        status: "A cute little bag charm that shows your currently playing song, perfect as a desk decor or keychain. ",
+    },
+    {
+        title: "Aasha AI",
+        image: aasha as ImageMetadata,
+        link: "https://aasha.arpy8.com/",
+        preview: "https://github.com/arpy8/AashaAi",
+        status: "An mini assistant designed to support college students during challenging times.",
+    },
     {
         title: "Project LO62",
         image: lo62 as ImageMetadata,
@@ -37,8 +53,8 @@ const projects: Project[] = [
     {
         title: "Drishti ki Node",
         image: drishti as ImageMetadata,
-        link: "https://github.com/epicshi",
-        preview: "https://github.com/EpicShi/hardware-stuff",
+        link: "https://github.com/EpicShi/hardware-stuff",
+        preview: "https://github.com/epicshi",
         status: "Gathers soil data from multiple sensors and updates the dashboard",
     },
 ];

@@ -10,6 +10,8 @@ import lemme from "../../../public/projects/misc/lemme.png";
 import ppup from "../../../public/projects/misc/ppup.png";
 import pastfm from "../../../public/projects/misc/pastfm.png";
 import dirdl from "../../../public/projects/misc/dirdl.png";
+import schizo from "../../../public/projects/misc/schizo.png";
+import jamjam from "../../../public/projects/misc/jamjam.png";
 
 interface Project {
     title: string;
@@ -21,32 +23,46 @@ interface Project {
 
 const projects: Project[] = [
     {
+        title: "JamJam",
+        image: jamjam as ImageMetadata,
+        link: "https://www.linkedin.com/posts/arpitsengar_sat-down-this-weekend-and-designed-a-custom-activity-7393384996310257664-lwq9",
+        preview: "https://github.com/arpy8/jamjam",
+        status: "My custom ESP32 based RF interference device.",
+    },
+    {
+        title: "Are you Schizophrenic?",
+        image: schizo as ImageMetadata,
+        link: "https://arpy8-schizophrenia-detection.hf.space/",
+        preview: "https://github.com/arpy8/Are_you_Schizophrenic",
+        status: "Schizophrenia detection web app using YOLO.",
+    },
+    {
         title: "DirDL",
         image: dirdl as ImageMetadata,
         link: "https://dirdl.arpy8.com",
         preview: "https://github.com/arpy8/dirdl",
-        status: "My personal github directory downloader.",
+        status: "Personal github directory downloader.",
     },
     {
         title: "PastFm",
         image: pastfm as ImageMetadata,
         link: "https://github.com/arpy8/pastfm",
         preview: "https://github.com/arpy8",
-        status: "YT Music now playing card for my github profile.",
+        status: "YT Music 'Now playing card' for my github profile.",
     },
     {
         title: "Lemme Sleep",
         image: lemme as ImageMetadata,
         link: "https://github.com/arpy8/lemme-sleep",
         preview: "https://lemme-sleep.arpy8.com/",
-        status: "Made this to calm my cat down at night when she's growling in heat.",
+        status: "Made this to calm my cat during night when she'd growl in heat.",
     },
     {
         title: "Popup Masty",
         image: ppup as ImageMetadata,
         link: "https://github.com/arpy8/popup-masty",
         preview: "https://ppup.vercel.app/",
-        status: "A cute little js script to spam popups.",
+        status: "Little js script to spam popups. :D",
     },
 ];
 ---
